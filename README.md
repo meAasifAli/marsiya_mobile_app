@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# Welcome to کشمیری مرثیہ App 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Kashmiri Marsiya is a form of elegiac poetry recited in the Kashmiri language to mourn the martyrdom of Imam Hussain (A.S) and the martyrs of Karbala. Deeply spiritual and emotional, it reflects the pain, sacrifice, and steadfastness of the Prophet’s family. Traditionally recited during Muharram, Kashmiri Marsiyas blend local poetic traditions with Islamic devotion, often accompanied by rhythmic lamentation and soft weeping to honor the legacy of Karbala.
 
-## Get started
+```
+یا حسینؑ، اے شُہیدِ کربلا
+تُہند یاد چھ ناوِ چھہ ہَر جا
 
-1. Install dependencies
+تُہند پیاس چھہ رُوحہ منز فِل
+دَرْیا سَند سَر، پَھیر نہ مِل
 
-   ```bash
-   npm install
-   ```
+شمرس چُھ تُلہ چھُت کرب تہ خنجر
+تُہند صبر گَژھ دَرْس بَشر
 
-2. Start the app
+زینبؑ چھُ نوحہ تہ ماتم کور
+غَم گَژھ سَرْ چُھ یتھ دِل بَرور
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+سجداں منز تُہند شان چھ روشن
+کُل عالم چھُ تُہند غم منز گَرکن
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```O Husayn, O martyr of Karbala,
+Your memory echoes everywhere.
+Your thirst lives in every soul,
+Yet the river was denied to you.
+With blades and spears they struck,
+But your patience taught humanity.
+Zainab wept in sorrow and pain,
+The world still feels that ache.
+Even in prostration, your glory shines,
+The whole universe mourns your sacrifice.
+```
