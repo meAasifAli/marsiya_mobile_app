@@ -7,8 +7,9 @@ import {
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  Animated,
   Dimensions,
   Image,
   StyleSheet,
@@ -21,7 +22,63 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const { width } = Dimensions.get("window");
 const itemWidth = width / 2 - 24;
 
+const hadiths = [
+  "الحسن والحسين سيدا شباب أهل الجنة",
+  "إن الحسن والحسين هما ريحانتاي من الدنيا",
+  "الحسن والحسين إمامان قاما أو قعدا",
+  "الحسن والحسين سيدا شباب أهل الجنة وأبوهما خير منهما",
+  "الحسن والحسين نوران من نور الله عز وجل",
+  "الحسن والحسين هما الإمامان بعدي",
+  "الحسن والحسين ريحانتاي من الدنيا، من أحبهما فقد أحبني ومن أبغضهما فقد أبغضني",
+
+  "الأئمة من بعدي اثنا عشر، أولهم علي بن أبي طالب عليه السلام وآخرهم القائم المهدي عليه السلام",
+  "علي عليه السلام مع الحق، والحق مع علي عليه السلام يدور معه حيثما دار",
+  "أنا مدينة العلم وعلي عليه السلام بابها، فمن أراد المدينة فليأت الباب",
+  "الحسن والحسين عليهما السلام إمامان، من أطاعهما فقد أطاعني ومن عصاهما فقد عصاني",
+  "علي بن الحسين زين العابدين عليه السلام أفضل من رأى من نسله",
+  "الباقر عليه السلام يبقر العلم بقراً",
+  "جعفر بن محمد الصادق عليه السلام صادق في قوله وفعله",
+  "موسى بن جعفر الكاظم عليه السلام كاظم الغيظ وصابر على البلاء",
+  "علي بن موسى الرضا عليه السلام",
+  "محمد بن علي الجواد عليه السلام من عترة الطاهرين",
+  "علي بن محمد الهادي عليه السلام هادٍ مهدي",
+  "الحسن بن علي العسكري عليه السلام إمام الزاهدين في زمنه",
+  "القائم من ولدي اسمه اسمي وكنيته كنيتي، يملأ الأرض قسطاً وعدلاً كما ملئت جوراً وظلماً",
+  "من أنكر واحداً من الأئمة عليهم السلام فقد أنكر الجميع",
+  "الأئمة بعدي اثنا عشر، كلهم من قريش، كلهم من ولد فاطمة عليها السلام",
+];
+
 const HomeScreen = () => {
+  const [currentHadith, setCurrentHadith] = useState(0);
+  const fadeAnim = useRef(new Animated.Value(1)).current;
+  const intervalRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const animateHadith = () => {
+      Animated.sequence([
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
+        setCurrentHadith((prev) => (prev + 1) % hadiths.length);
+      });
+    };
+
+    intervalRef.current = setInterval(animateHadith, 6000);
+    return () => clearInterval(intervalRef.current!);
+  }, [fadeAnim]);
+
+  useEffect(() => {
+    fadeAnim.setValue(1);
+  }, [currentHadith, fadeAnim]);
+
   const gridItems = [
     {
       title: "View Marsiya",
@@ -100,9 +157,18 @@ const HomeScreen = () => {
           {/* Header Section */}
           <View style={styles.headerSection}>
             <Text style={styles.headerTitle}>کشمیری مرثیہ</Text>
-            <Text style={styles.headerSubtitle}>
-              الحسن والحسين سيدا شباب أهل الجنة
-            </Text>
+            <Animated.View
+              style={{
+                height: 48,
+                justifyContent: "center",
+                alignItems: "center",
+                opacity: fadeAnim,
+              }}
+            >
+              <Text style={styles.headerSubtitle}>
+                {`"${hadiths[currentHadith]}"`}
+              </Text>
+            </Animated.View>
           </View>
 
           {/* Logo Section */}
@@ -169,8 +235,6 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    paddingHorizontal: 16,
-    paddingVertical: 20,
   },
   headerSection: {
     alignItems: "center",

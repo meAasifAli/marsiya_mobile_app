@@ -4,7 +4,7 @@
     "slug": "marsiya",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/panjtan.png",
+    "icon": "./src/assets/images/panjtan.png",
     "scheme": "marsiya",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/panjtan.png",
+        "foregroundImage": "./src/assets/images/panjtan.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -21,17 +21,29 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./src/assets/images/favicon.png"
+    },
+    "splash": {
+      "image": "./src/assets/images/panjtan.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A1A2E",
+      "imageWidth": 200,
+      "imageHeight": 200,
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/panjtan.jpg",
-          "imageWidth": 300,
-          "resizeMode": "cover",
-          "backgroundColor": "#0000"
+          "image": "./src/assets/images/panjtan.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#1A1A2E",
+          "imageWidth": 200,
+          "imageHeight": 200,
+          "androidSplashResourceName": "splash",
+          "androidScaleType": "CENTER_CROP"
         }
       ]
     ],

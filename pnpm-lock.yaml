@@ -83,6 +83,9 @@ importers:
       react-native-screens:
         specifier: ~4.11.1
         version: 4.11.1(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
+      react-native-swiper:
+        specifier: ^1.6.0
+        version: 1.6.0
       react-native-web:
         specifier: ~0.20.0
         version: 0.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -3197,6 +3200,9 @@ packages:
     peerDependencies:
       react: '*'
       react-native: '*'
+
+  react-native-swiper@1.6.0:
+    resolution: {integrity: sha512-OnkTTZi+9uZUgy0uz1I9oYDhCU3z36lZn+LFsk9FXPRelxb/KeABzvPs3r3SrHWy1aA67KGtSFj0xNK2QD0NJQ==}
 
   react-native-web@0.20.0:
     resolution: {integrity: sha512-OOSgrw+aON6R3hRosCau/xVxdLzbjEcsLysYedka0ZON4ZZe6n9xgeN9ZkoejhARM36oTlUgHIQqxGutEJ9Wxg==}
@@ -7749,6 +7755,10 @@ snapshots:
       react-native: 0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)
       react-native-is-edge-to-edge: 1.1.7(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
       warn-once: 0.1.1
+
+  react-native-swiper@1.6.0:
+    dependencies:
+      prop-types: 15.8.1
 
   react-native-web@0.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
